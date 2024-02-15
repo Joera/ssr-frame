@@ -1,0 +1,80 @@
+# docker-compose.yml
+
+version: '3'
+services:
+
+  renderer:
+    image: ssr_renderer
+    container_name: ssr_renderer
+    build:
+      context: ..
+      dockerfile: ./devops/renderer.Dockerfile
+    restart: always
+    ports:
+      - "3009:3009"
+    volumes:
+      - frames:/opt/images
+    networks:
+      - ssr
+
+  browserless:
+    image: browserless/chrome:latest
+    container_name: "browserless"
+    ports:
+      - "9090:3000"
+    networks:
+      - ssr
+
+  attestations:
+    image: ssr_attestations
+    container_name: ssr_attestations
+    build:
+      context: ..
+      dockerfile: ./devops/attestations.Dockerfile
+    restart: always
+    ports:
+      - "3011:3011"
+    networks:
+      - ssr
+
+  server:
+    image: ssr_server
+    container_name: ssr_server
+    build:
+      context: ..
+      dockerfile: ./devops/nginx.Dockerfile
+    restart: always
+    volumes:
+      - letsencrypt:/etc/letsencrypt
+      - frames:/usr/etc/nginx/images
+      - ssr_assets:/usr/etc/nginx/assets
+      - ssr_scripts:/usr/etc/nginx/scripts
+    ports:
+      - "8880:80"
+      - "443:443"
+    networks:
+      - ssr
+
+volumes:
+  letsencrypt:
+  ssr_assets:
+    driver: local # Define the driver and options under the volume name
+    driver_opts:
+      type: none
+      device: /home/joera/Documents/ssrframe/volumes/assets/
+      o: bind
+  ssr_scripts:
+    driver: local # Define the driver and options under the volume name
+    driver_opts:
+      type: none
+      device: /home/joera/Documents/ssrframe/volumes/scripts/
+      o: bind
+  frames:
+    driver: local # Define the driver and options under the volume name
+    driver_opts:
+      type: none
+      device: /home/joera/Documents/ssrframe/volumes/frames/
+      o: bind
+
+networks:
+  ssr: null 
