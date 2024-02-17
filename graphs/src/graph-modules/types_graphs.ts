@@ -12,7 +12,8 @@ export type Lines = Line[]
 
 export type Bar = {
     label : string,
-    value : number,
+    yValue : number,
+    xValue : string,
     value2?: number,
     colour: string,
     format? : string,

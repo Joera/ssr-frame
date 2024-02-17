@@ -24,7 +24,7 @@ export const html = (flavor,eas) => {
     <main data-graph-preset="frame" style="background:#fff;width:1000px;height:1910px;"></main>
     </body> 
     <script src="http://ssr_server/scripts/${flavor}/main.bundle.js"></script>
-    <script>main.run("${eas}")</script>
+    <script>main.run(${eas})</script>
     </html>`;
 }
 

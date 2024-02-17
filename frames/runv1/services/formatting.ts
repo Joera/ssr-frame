@@ -19,16 +19,22 @@ export const toTime = (d: Date) => {
 
 }
 
+const twoDigit = (n: Number) => {
+
+    return (parseFloat(n.toString()) < 10) ? "0" + n.toString() : n.toString();
+}
+
 export const parseDuration = (duration: string) => {
 
     const d = Number(duration);
-    var h = Math.floor(d / 3600);
-    var m = Math.floor(d % 3600 / 60);
-    var s = Math.floor(d % 3600 % 60);
+    let h = Math.floor(d / 3600);
+    let m = Math.floor(d % 3600 / 60);
+    let s = Math.floor(d % 3600 % 60);
+
 
     var hDisplay = h > 0 ? h + ":" : "";
-    var mDisplay = m > 0 ? m + ":" : "";
-    var sDisplay = s > 0 ? s : "";
+    var mDisplay = m > 0 ? twoDigit(m) + ":" : "";
+    var sDisplay = s > 0 ? twoDigit(s) : "";
     return hDisplay + mDisplay + sDisplay; 
 }
 

@@ -6,15 +6,15 @@ export const config : any[] = [
         "ctrlr": "RunGroupV1",
         "graphs": [
             {
-            "slug" : "runv1-1",
-            "ctrlr" : "RunV1",
+            "slug" : "myrunv1-1",
+            "ctrlr" : "MyRunsV1",
             "args" : [],
             "parameters": [
                 [
                     {
-                        "label": "xxx",
-                        "column": "xxx",
-                        "colour": "orange"
+                        "label": "Moving time",
+                        "column": "moving_time",
+                        "colour": "white"
                     }
                 ]
             ]

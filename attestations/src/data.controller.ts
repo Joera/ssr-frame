@@ -15,26 +15,27 @@ export class DataController implements IDataCtrlr {
 
     constructor() {}
 
-    async fetch(_attestation: any) : Promise<any> {
+    async fetch(raw_eas: any) : Promise<any> {
+
+      console.log(raw_eas);
   
-      let a = new Attestation();
-      a.mock();
+      let a = new Attestation(raw_eas);
+
+      console.log(a.receipt());
 
       if(a.verify()) {
 
-          const data = a.data();
-          let activity = {};
-        
-          for (let prop of data) {
-              activity[prop["name"]] = prop.type == 'uint64' ? Number(prop.value.value) : prop.value.value;
-          };
-
+          const activity = a.data();
+      
+          let comparison = await a.attestations(a.receipt()["sig"]["message"]["recipient"])
+          
           return { 
-            activity
+            activity,
+            comparison
           };
 
       } else {
-        return "could not verify attestation"
+        return { error : "could not verify attestation" }
       }
     }
 }

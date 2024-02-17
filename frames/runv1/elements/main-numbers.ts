@@ -32,8 +32,8 @@ export class MainNumbers {
         this.headerElement = this.window.document.createElement('div');
         this.headerElement.classList.add('main_numbers');
         this.headerElement.style.position = 'relative';
-        this.headerElement.style.gridColumn = '6 / span 3';
-        this.headerElement.style.gridRow = '4 / span 5';
+        this.headerElement.style.gridColumn = '2 / span 3';
+        this.headerElement.style.gridRow = '2 / span 6';
         centeredColumn(this.headerElement);
 
         label("distance", this.headerElement);

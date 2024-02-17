@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Farcast your run</title>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
+  </head>
+  <body>
+    <main>
+        <section>
+          <h1>Farcast your run</h1>  
+          <ol>
+            <li>Visit <a href="https://www.receipts.xyz">receipts.xyz</a>.</li>
+            <li>Create an off chain attestation for a single Strava activity.</li>
+            <li>Follow the link under 'user attestation' to base.easscan.org explorer.</li>
+            <li>
+              <form id="eas_entry">
+              <label>Copy/paste the raw data of your attestation:</label>
+              <textarea name="raw_eas" id="raw_eas" cols="30" rows="10"></textarea>
+              <button type="submit">Submit</button>
+            </li>
+          </form>
+        </ol>
+      </section>
+      <section id="preview_container"></section>
+    </main>
+	<script src="scripts.js"></script>
+  </body>
+</html>
+
+

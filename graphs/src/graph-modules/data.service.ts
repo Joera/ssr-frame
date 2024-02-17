@@ -1,6 +1,6 @@
 
 export interface IDataService {
-    fetch: (string) => Promise<any>
+    verifyAndParse: (string) => Promise<any>
 }
 
 
@@ -12,28 +12,34 @@ export class DataService implements IDataService{
 
     _collection = {};
 
-    constructor () {
+    constructor () {}
 
-    }
-
-
-    async fetch(attestation_cid: string) : Promise<any> {
+    async verifyAndParse(raw_eas: any) : Promise<any> {
 
         return new Promise ( async (resolve, reject) => {
 
-                const endpoint = "/eas?cid=" + attestation_cid;
+                const endpoint = "/eas";
 
                 // @ts-ignore
                 const url = DOMAIN + APIBASE + endpoint;
 
-                const response = await fetch(url);
-
-                if(response.ok) {
-                    resolve(response.json())
-                } else {
-                    reject()
-                }
-            
+                fetch(url, {
+                    method: 'post',
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(raw_eas)
+                })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (result) {
+                    resolve(result);
+                })
+                .catch (function (error) {
+                    reject(error);
+                });            
         });
         
     }

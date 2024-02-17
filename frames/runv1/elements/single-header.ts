@@ -23,10 +23,10 @@ export class SingleHeader {
         this.headerElement.style.justifyContent = 'center';
         this.headerElement.style.alignItems = 'flex-end';
         // this.headerElement.style.width = 'calc(50% - 0px)';
-        this.headerElement.style.gridColumn = '1 / span 3';
-        this.headerElement.style.gridRow = '5 / span 2';
-        this.headerElement.style.marginTop = '-3rem';
-        this.headerElement.style.marginRight = '1rem';
+        this.headerElement.style.gridColumn = '9 / span 3';
+        this.headerElement.style.gridRow = '2 / span 6';
+        // this.headerElement.style.marginTop = '-3rem';
+        // this.headerElement.style.marginRight = '1rem';
         
         let h = title(activity.title, this.headerElement)
         h.style.marginRight = "1rem";

@@ -1,4 +1,5 @@
 import { IGroupCtrlr, IGroupMappingV2 } from "./interfaces";
+import * as d3 from 'd3';
 
 export class GroupControllerV1 implements IGroupCtrlr{
 
@@ -13,7 +14,9 @@ export class GroupControllerV1 implements IGroupCtrlr{
     ){
         this.slug = config.slug;
         this.segment = config.segment;
+        window.d3 = d3;
     }
+
 
     html (htmlContainer: HTMLElement) : HTMLElement {
 

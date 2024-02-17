@@ -83,10 +83,12 @@ export class GraphControllerV3 implements IGraphControllerV3  {
 
     _html () {
 
+   
+        this.group.element.classList.add("graph-container-grid")
+        this.group.element.classList.add("graph-view")
+        this.group.element.style.zIndex = "10"
+
         const graphEl = document.createElement('section');
-        graphEl.classList.add("graph-container-grid")
-        graphEl.classList.add("graph-view")
-        
         this.group.element.appendChild(graphEl);
 
         return graphEl

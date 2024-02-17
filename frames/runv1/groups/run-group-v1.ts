@@ -27,11 +27,11 @@ export class RunGroupV1 extends GroupControllerV1 {
 
         const groupEl = super.html(htmlContainer)
         groupEl.classList.add("graph-container-grid");
-        groupEl.style.backgroundColor = "#f4f2d2";
+        groupEl.style.backgroundColor = "#472A91";
 
         this.typeIcon = new TypeIcon(groupEl, window)
         this.header = new SingleHeader(groupEl, window)
-        this.elevationIcon = new ElevationIcon(groupEl, window)
+        // this.elevationIcon = new ElevationIcon(groupEl, window)
         this.main = new MainNumbers(groupEl, window)
 
         this.update(this.data,this.segment, false);
@@ -57,7 +57,7 @@ export class RunGroupV1 extends GroupControllerV1 {
 
         this.header.draw(data.activity);
         this.typeIcon.draw(data.activity);
-        this.elevationIcon.draw(data.activity);
+        // this.elevationIcon.draw(data.activity);
         this.main.draw(data.activity);
     }
 

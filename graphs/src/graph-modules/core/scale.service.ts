@@ -30,12 +30,13 @@ export class ScaleService implements IScaleService{
 
         this.dataLength = data.length;
 
-        const min = window.d3.min(data.filter( v => !isNaN(v)));
-        const max = window.d3.max(data.filter( v => !isNaN(v)));
+        let min = window.d3.min(data.filter( v => !isNaN(v)));
+        let max = window.d3.max(data.filter( v => !isNaN(v)));
 
         switch(this.config.type) {
 
             case 'linear':
+                
                 if (min == undefined || max == undefined) return;
                 this.scale = window.d3.scaleLinear().domain([parseFloat(min),parseFloat(max)]);
                 break;
@@ -60,13 +61,17 @@ export class ScaleService implements IScaleService{
 
             case 'time':
 
-                if (min == undefined || max == undefined) return;
-                this.scale = window.d3.scaleTime().domain([new Date(min),new Date(max)]);
+                min = window.d3.min(data.map( v => new Date(v)));
+                max = window.d3.max(data.map( v => new Date(v)));
+
+                this.scale = window.d3.scaleTime().domain([new Date(min), new Date(max)]);
                 break;
 
             case 'band':
 
                 if(self.ctrlr.config.paddingInner == undefined || self.ctrlr.config.paddingOuter == undefined) return;
+
+              
 
                 this.scale = window.d3.scaleBand()
                     .domain(data)
@@ -87,8 +92,6 @@ export class ScaleService implements IScaleService{
 
                 break;
 
-            
-
             case 'normalised':
 
                 this.scale = window.d3.scaleLinear();
@@ -104,9 +107,9 @@ export class ScaleService implements IScaleService{
 
         if (!this.config.type) return;
 
-        if(this.scale.domain().length < 2) {
-            // console.log(this.config + this.scale.domain())
-        }
+        // if(this.scale.domain().length < 2) {
+        //     // console.log(this.config + this.scale.domain())
+        // }
 
         switch(this.config.direction) {
 
