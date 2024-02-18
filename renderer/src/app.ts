@@ -25,9 +25,11 @@ app.post('/create', async (req, res) => {
 
 app.get('/frame', async (req, res) => {
 
-    const domain = "autonomous-times.com";
+    console.log("reachable");
 
-    const image_name = req.query.flavor + "/" + req.query.uid
+    const domain = "https://frames.autonomous-times.com"; // localhost:8880
+
+    const image_name = "kip" // req.query.flavor + "/" + req.query.uid + ".png"
 
     res.status(200).send(`
     
@@ -35,7 +37,7 @@ app.get('/frame', async (req, res) => {
         <html>
           <head>
             <meta property="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="http://${domain}:8080/frames/${image_name}"
+            <meta property="fc:frame:image" content="http://${domain}/frames/${image_name}"
           </head>
         </html>
     
