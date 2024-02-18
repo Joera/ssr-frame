@@ -48,7 +48,7 @@ export class SsrController implements IRenderer {
         });
 
         await page.setContent(_html, {
-          timeout: 7000,
+          timeout: 10000,
           waitUntil: 'networkidle0' // | 'networkidle2'
         });
 
