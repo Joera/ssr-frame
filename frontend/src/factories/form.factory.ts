@@ -1,3 +1,4 @@
+import { showLink } from "./frame.factory";
 import { preview } from "./preview.factory";
 
 export const parseFormData = (formData: FormData) => {
@@ -41,6 +42,7 @@ export const submit = (e: FormDataEvent, id: string) => {
             console.log(result);
 
             preview(result.image);
+            showLink("runV1", JSON.parse(formData.raw_eas.sig.uid))
         })
         .catch (function (error) {
             console.log('Request failed', error);
