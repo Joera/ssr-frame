@@ -18219,7 +18219,7 @@ var title = (text, parent) => {
   e.style.margin = "0";
   e.style.padding = "0";
   e.style.lineHeight = "1.5";
-  e.style.color = textColor;
+  e.style.color = "#f4c6e2";
   e.innerHTML = text;
   parent.appendChild(e);
   return e;
@@ -18267,10 +18267,10 @@ var MainNumbers = class {
     centeredColumn(this.headerElement);
     label("distance", this.headerElement);
     const e1 = bigNumber((parseInt(activity.distance) / 1e3).toString() + "km", this.headerElement);
-    e1.style.padding = "0 0 3.2rem 0";
+    e1.style.padding = "0 0 4.2rem 0";
     label("moving time", this.headerElement);
     const e22 = bigNumber(parseDuration(activity.moving_time), this.headerElement);
-    e22.style.padding = "0 0 3.2rem 0";
+    e22.style.padding = "0 0 4.2rem 0";
     label("average speed", this.headerElement);
     const e3 = bigNumber(calcSpeed(activity.average_speed), this.headerElement);
     this.parent.appendChild(this.headerElement);
@@ -18302,10 +18302,10 @@ var SingleHeader = class {
     const offset = 3;
     let dateEl = datesAndTimes(this.headerElement);
     dateEl.innerHTML = toDate(activity.local_time);
-    dateEl.style.marginLeft = "4rem";
+    dateEl.style.marginLeft = "8rem";
     let timeEl = datesAndTimes(this.headerElement);
     timeEl.innerHTML = toTime(activity.local_time);
-    timeEl.style.marginLeft = "2rem";
+    timeEl.style.marginLeft = "4rem";
     let h = title(activity.title, this.headerElement);
     h.style.marginLeft = "0rem";
     this.parent.appendChild(this.headerElement);

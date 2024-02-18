@@ -38,11 +38,11 @@ export class MainNumbers {
 
         label("distance", this.headerElement);
         const e1 = bigNumber((parseInt(activity.distance) / 1000).toString() + "km", this.headerElement);
-        e1.style.padding = "0 0 3.2rem 0";
+        e1.style.padding = "0 0 4.2rem 0";
         
         label("moving time", this.headerElement);
         const e2 = bigNumber(parseDuration(activity.moving_time), this.headerElement);
-        e2.style.padding = "0 0 3.2rem 0";
+        e2.style.padding = "0 0 4.2rem 0";
 
         label("average speed", this.headerElement);
         const e3 = bigNumber(calcSpeed(activity.average_speed), this.headerElement);

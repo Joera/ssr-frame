@@ -42,7 +42,7 @@ export const title = (text: string , parent: HTMLElement) => {
     e.style.margin = "0";
     e.style.padding = "0";
     e.style.lineHeight = "1.5";
-    e.style.color = textColor;
+    e.style.color = "#f4c6e2";
     e.innerHTML = text;
 
     parent.appendChild(e);
