@@ -57,7 +57,7 @@ export const datesAndTimes = (parent: HTMLElement) => {
     e.style.fontFamily = "'Inkwell Sans A', 'Inkwell Condensed B'";
     e.style.fontStyle = "normal";
     e.style.fontWeight = "400";
-    e.style.lineHeight = "2";
+    e.style.lineHeight = "2 ";
     e.style.color = textColor;
     parent.appendChild(e);
 
