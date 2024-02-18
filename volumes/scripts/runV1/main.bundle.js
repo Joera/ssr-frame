@@ -18961,7 +18961,7 @@ var MyRunsV1 = class extends GraphControllerV3 {
       );
     }
     data2.bars.sort((a4, b) => {
-      return Date.parse(b.local_time) - Date.parse(a4.local_time);
+      return Date.parse(b.xValue) - Date.parse(a4.xValue);
     });
     console.log(data2);
     return data2;

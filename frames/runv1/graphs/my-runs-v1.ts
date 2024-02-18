@@ -85,7 +85,7 @@ export class MyRunsV1 extends GraphControllerV3 {
             }
 
             data.bars.sort( (a,b)  => {
-                return Date.parse(b.local_time) - Date.parse(a.local_time)
+                return Date.parse(b.xValue) - Date.parse(a.xValue)
             });
 
             console.log(data);
