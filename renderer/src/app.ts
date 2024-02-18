@@ -27,21 +27,28 @@ app.get('/frame', async (req, res) => {
 
     console.log("reachable");
 
-    const domain = "https://frames.autonomous-times.com"; // localhost:8880
+    const domain = "https://unforgettable.autonomous-times.com"; // localhost:8880
 
-    const image_name = "kip" // req.query.flavor + "/" + req.query.uid + ".png"
+    if(req.query.flavor != undefined && req.query.uid != undefined ) {
 
-    res.status(200).send(`
-    
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <meta property="fc:frame" content="vNext" />
-            <meta property="fc:frame:image" content="http://${domain}/frames/${image_name}"
-          </head>
-        </html>
-    
-    `);
+      const image_name = req.query.flavor + "/" + req.query.uid + ".png"
+
+      res.status(200).send(`
+      
+          <!DOCTYPE html>
+          <html>
+            <head>
+              <meta property="fc:frame" content="vNext" />
+              <meta property="fc:frame:image" content="http://${domain}/frames/${image_name}"
+            </head>
+          </html>
+      
+      `);
+
+    } else {
+
+      res.status(500)
+    }
 });
 
 app.listen(port, () => {
