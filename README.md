@@ -2,7 +2,7 @@
 
 Server side rendering of images from farcaster frames. Typescript 'templates' can be added without recompiling, restarting containers. 
 
-!(schema)[[./ssr2.excalidraw.png]]
+![schema](./ssr2.excalidraw.png)
 
 
 touch attestations/.env    
