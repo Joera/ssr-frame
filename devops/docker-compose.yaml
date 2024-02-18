@@ -49,6 +49,7 @@ services:
       - frames:/usr/etc/nginx/images
       - ssr_assets:/usr/etc/nginx/assets
       - ssr_scripts:/usr/etc/nginx/scripts
+      - ssr_frontend:/usr/etc/nginx/frontend
     ports:
       - "8880:80"
       - "443:443"
@@ -61,19 +62,25 @@ volumes:
     driver: local # Define the driver and options under the volume name
     driver_opts:
       type: none
-      device: /home/joera/Documents/ssrframe/volumes/assets/
+      device: ${VOLUME_FOLDER}/volumes/assets/
       o: bind
   ssr_scripts:
     driver: local # Define the driver and options under the volume name
     driver_opts:
       type: none
-      device: /home/joera/Documents/ssrframe/volumes/scripts/
+      device: ${VOLUME_FOLDER}/volumes/scripts/
       o: bind
   frames:
     driver: local # Define the driver and options under the volume name
     driver_opts:
       type: none
-      device: /home/joera/Documents/ssrframe/volumes/frames/
+      device: ${VOLUME_FOLDER}/volumes/frames/
+      o: bind
+  ssr_frontend:
+    driver: local # Define the driver and options under the volume name
+    driver_opts:
+      type: none
+      device: ${VOLUME_FOLDER}/volumes/frontend/
       o: bind
 
 networks:
