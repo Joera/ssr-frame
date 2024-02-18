@@ -18186,7 +18186,7 @@ var centeredColumn = (e) => {
 var textColor = "#fff";
 var label = (text, parent) => {
   let e = window.document.createElement("span");
-  e.style.fontSize = "2rem";
+  e.style.fontSize = "3.2rem";
   e.style.lineHeight = "1";
   e.style.fontFamily = "'Inkwell Condensed A', 'Inkwell Condensed B'";
   e.style.fontStyle = "normal";
@@ -18296,18 +18296,18 @@ var SingleHeader = class {
     this.headerElement.style.display = "flex";
     this.headerElement.style.flexDirection = "column";
     this.headerElement.style.justifyContent = "center";
-    this.headerElement.style.alignItems = "flex-end";
+    this.headerElement.style.alignItems = "flex-start";
     this.headerElement.style.gridColumn = "9 / span 3";
     this.headerElement.style.gridRow = "2 / span 6";
-    let h = title(activity.title, this.headerElement);
-    h.style.marginRight = "1rem";
     const offset = 3;
     let dateEl = datesAndTimes(this.headerElement);
     dateEl.innerHTML = toDate(activity.local_time);
-    dateEl.style.marginRight = (1 + 1 * offset).toString() + "rem";
+    dateEl.style.marginLeft = "4rem";
     let timeEl = datesAndTimes(this.headerElement);
     timeEl.innerHTML = toTime(activity.local_time);
-    timeEl.style.marginRight = (1 + 2 * offset).toString() + "rem";
+    timeEl.style.marginLeft = "2rem";
+    let h = title(activity.title, this.headerElement);
+    h.style.marginLeft = "0rem";
     this.parent.appendChild(this.headerElement);
     return true;
   }

@@ -3,7 +3,7 @@ const textColor = "#fff"
 export const label = (text: string, parent) => {
 
     let e = window.document.createElement('span');
-    e.style.fontSize = '2rem';
+    e.style.fontSize = '3.2rem';
     e.style.lineHeight = '1';
     e.style.fontFamily = "'Inkwell Condensed A', 'Inkwell Condensed B'";
     e.style.fontStyle = "normal";
