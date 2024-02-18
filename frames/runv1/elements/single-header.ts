@@ -34,11 +34,11 @@ export class SingleHeader {
 
         let dateEl = datesAndTimes(this.headerElement);
         dateEl.innerHTML = toDate(activity.local_time);
-        dateEl.style.marginLeft = "8rem"; // (1 + (1 * offset)).toString() + "rem";
+        dateEl.style.marginLeft = "12rem"; // (1 + (1 * offset)).toString() + "rem";
 
         let timeEl = datesAndTimes(this.headerElement);
         timeEl.innerHTML = toTime(activity.local_time);
-        timeEl.style.marginLeft = "4rem"; // (1 + (2 * offset)).toString() + "rem";
+        timeEl.style.marginLeft = "6rem"; // (1 + (2 * offset)).toString() + "rem";
 
         let h = title(activity.title, this.headerElement)
         h.style.marginLeft = "0rem";
