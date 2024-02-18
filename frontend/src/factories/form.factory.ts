@@ -24,7 +24,8 @@ export const submit = (e: FormDataEvent, id: string) => {
     const formData = parseFormData(e.formData);
     const DOMAIN = "https://renderer.autonomous-times.com" // localhost:3009
 
-    console.log(JSON.parse(formData.raw_eas));
+        const eas = JSON.parse(formData.raw_eas);
+        console.log(eas);
 
         fetch(DOMAIN + '/create', { 
             method: 'post',
@@ -41,8 +42,10 @@ export const submit = (e: FormDataEvent, id: string) => {
         .then(function (result) {
             console.log(result);
 
+            const eas = JSON.parse(formData.raw_eas)
+
             preview(result.image);
-            showLink("runV1", JSON.parse(formData.raw_eas).sig.uid)
+            showLink("runV1", eas.sig.uid)
         })
         .catch (function (error) {
             console.log('Request failed', error);
