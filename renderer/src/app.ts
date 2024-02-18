@@ -40,6 +40,7 @@ app.get('/frame', async (req, res) => {
             <head>
               <meta property="fc:frame" content="vNext" />
               <meta property="fc:frame:image" content="http://${domain}/frames/${image_name}"
+              <meta property="og:image" content="http://${domain}/frames/${image_name}"
             </head>
           </html>
       
