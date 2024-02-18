@@ -40,7 +40,16 @@ ol li {
     margin-bottom: 1.5rem;
 }
 
-section.preview_container {
+section#preview_container {
 
     margin-bottom : 3rem;
+}
+
+section#link_container {
+
+    margin-bottom : 3rem;
+
+    > div {
+        margin: .75rem 0; 
+    }
 }
