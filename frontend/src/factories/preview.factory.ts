@@ -1,5 +1,7 @@
 export const preview = (image : string) => {
 
+    const DOMAIN = "https://frames.autonomous-times.com" // localhost:8880
+
     const container = document.getElementById("preview_container");
     container.innerHTML = "";
 
@@ -9,7 +11,7 @@ export const preview = (image : string) => {
     a.style.position = "relative";
 
     const img = document.createElement("img");
-    img.src = "http://localhost:8880/frames/" + image;
+    img.src = DOMAIN + "/frames/" + image;
     img.style.width = "100%";
     img.style.height = "auto";
 

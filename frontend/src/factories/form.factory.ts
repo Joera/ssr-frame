@@ -21,10 +21,11 @@ export const parseFormData = (formData: FormData) => {
 export const submit = (e: FormDataEvent, id: string) => {
 
     const formData = parseFormData(e.formData);
+    const DOMAIN = "https://renderer.autonomous-times.com" // localhost:3009
 
     console.log(JSON.parse(formData.raw_eas));
 
-        fetch('http://localhost:3009/create', { 
+        fetch(DOMAIN + '/create', { 
             method: 'post',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
