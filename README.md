@@ -1,8 +1,16 @@
 
 
-docker-compose up -d (for headless browser)
+Server side rendering of images from farcaster frames. Typescript 'templates' can be added without recompiling, restarting containers. 
 
-cd node 
-npm run start 
+![[./ssr2.excalidraw.png]]
 
-curl -X POST http://localhost:3009/ssr
+
+touch attestations/.env 
+touch renderer/.env 
+cd devops
+cp env.example .env
+nano .env (to add your local folder)
+( change domains in nginx/conf.d files ) 
+docker-compose up -d 
+
+
