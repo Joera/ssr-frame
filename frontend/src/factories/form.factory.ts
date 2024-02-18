@@ -42,7 +42,7 @@ export const submit = (e: FormDataEvent, id: string) => {
             console.log(result);
 
             preview(result.image);
-            showLink("runV1", JSON.parse(formData.raw_eas.sig.uid))
+            showLink("runV1", JSON.parse(formData.raw_eas).sig.uid)
         })
         .catch (function (error) {
             console.log('Request failed', error);
