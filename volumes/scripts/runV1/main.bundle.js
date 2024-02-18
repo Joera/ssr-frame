@@ -18231,7 +18231,7 @@ var datesAndTimes = (parent) => {
   e.style.fontFamily = "'Inkwell Sans A', 'Inkwell Condensed B'";
   e.style.fontStyle = "normal";
   e.style.fontWeight = "400";
-  e.style.lineHeight = "2";
+  e.style.lineHeight = "2 ";
   e.style.color = textColor;
   parent.appendChild(e);
   return e;
@@ -18960,6 +18960,9 @@ var MyRunsV1 = class extends GraphControllerV3 {
         }
       );
     }
+    data2.bars.sort((a4, b) => {
+      return Date.parse(b.local_time) - Date.parse(a4.local_time);
+    });
     console.log(data2);
     return data2;
   }
