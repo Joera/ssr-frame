@@ -18187,7 +18187,7 @@ var textColor = "#fff";
 var label = (text, parent) => {
   let e = window.document.createElement("span");
   e.style.fontSize = "3.2rem";
-  e.style.lineHeight = "1";
+  e.style.lineHeight = "1.4";
   e.style.fontFamily = "'Inkwell Condensed A', 'Inkwell Condensed B'";
   e.style.fontStyle = "normal";
   e.style.fontWeight = "400";
@@ -18231,7 +18231,7 @@ var datesAndTimes = (parent) => {
   e.style.fontFamily = "'Inkwell Sans A', 'Inkwell Condensed B'";
   e.style.fontStyle = "normal";
   e.style.fontWeight = "400";
-  e.style.lineHeight = "1.5";
+  e.style.lineHeight = "2";
   e.style.color = textColor;
   parent.appendChild(e);
   return e;
@@ -18302,10 +18302,10 @@ var SingleHeader = class {
     const offset = 3;
     let dateEl = datesAndTimes(this.headerElement);
     dateEl.innerHTML = toDate(activity.local_time);
-    dateEl.style.marginLeft = "8rem";
+    dateEl.style.marginLeft = "12rem";
     let timeEl = datesAndTimes(this.headerElement);
     timeEl.innerHTML = toTime(activity.local_time);
-    timeEl.style.marginLeft = "4rem";
+    timeEl.style.marginLeft = "6rem";
     let h = title(activity.title, this.headerElement);
     h.style.marginLeft = "0rem";
     this.parent.appendChild(this.headerElement);
