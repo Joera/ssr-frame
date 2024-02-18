@@ -51,7 +51,7 @@ services:
       - ssr_scripts:/usr/etc/nginx/scripts
       - ssr_frontend:/usr/etc/nginx/frontend
     ports:
-      - "8880:80"
+      - "${PORT}:80"
       - "443:443"
     networks:
       - ssr
