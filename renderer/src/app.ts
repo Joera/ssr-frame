@@ -41,7 +41,7 @@ app.get('/frame', async (req, res) => {
               <meta property="fc:frame" content="vNext" />
               <meta property="fc:frame:image" content="https://${domain}/frames/${image_name}" />
               <meta property="og:image" content="https://${domain}/frames/${image_name}" />
-              <meta property="fc:frame:button:1" content="proof"/> 
+              <meta property="fc:frame:button:1" content="receipt"/> 
               <meta property="fc:frame:button:1:action" content="link"/> 
               <meta property="fc:frame:button:1:target" content="https://base.easscan.org/offchain/attestation/view/${req.query.uid}"/> 
             </head>
