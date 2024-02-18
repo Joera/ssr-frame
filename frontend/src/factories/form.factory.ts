@@ -42,8 +42,6 @@ export const submit = (e: FormDataEvent, id: string) => {
         .then(function (result) {
             console.log(result);
 
-            const eas = JSON.parse(formData.raw_eas)
-
             preview(result.image);
             showLink("runV1", eas.sig.uid)
         })
