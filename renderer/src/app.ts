@@ -27,7 +27,7 @@ app.get('/frame', async (req, res) => {
 
     console.log("reachable");
 
-    const domain = "unforgettable.autonomous-times.com"; // localhost:8880
+    const domain = "frames.autonomous-times.com"; // localhost:8880
 
     if(req.query.flavor != undefined && req.query.uid != undefined ) {
 
