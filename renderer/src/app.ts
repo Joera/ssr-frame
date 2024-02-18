@@ -27,7 +27,7 @@ app.get('/frame', async (req, res) => {
 
     console.log("reachable");
 
-    const domain = "https://unforgettable.autonomous-times.com"; // localhost:8880
+    const domain = "unforgettable.autonomous-times.com"; // localhost:8880
 
     if(req.query.flavor != undefined && req.query.uid != undefined ) {
 
@@ -39,8 +39,8 @@ app.get('/frame', async (req, res) => {
           <html>
             <head>
               <meta property="fc:frame" content="vNext" />
-              <meta property="fc:frame:image" content="http://${domain}/frames/${image_name}" />
-              <meta property="og:image" content="http://${domain}/frames/${image_name}" />
+              <meta property="fc:frame:image" content="https://${domain}/frames/${image_name}" />
+              <meta property="og:image" content="https://${domain}/frames/${image_name}" />
             </head>
           </html>
       
